@@ -9,3 +9,8 @@ export async function adduser(report) {
   const db = await connectDB();
   return db.collection("users").insertOne(report);
 }
+//--------------------------------------------
+export async function findUser(username) {
+  const db = await connectDB();
+  return db.collection("users").findOne({ username });
+}
